@@ -1,0 +1,41 @@
+﻿@model DoctorAppointmentScheduler.Models.DoctorDetail
+
+@{
+    ViewBag.Title = "DisplayDoctorDetails";
+}
+
+
+<div>
+    <h4>DoctorDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DoctorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DoctorID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DoctorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DoctorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Specaility)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Specaility)
+        </dd>
+
+    </dl>
+</div>
+<p>
+   
+    @Html.ActionLink("back to Login", "Login","Login") |
+</p>

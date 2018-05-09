@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AppointmentSchedulerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AppointmentDetails">
+    <Key>
+      <PropertyRef Name="AppointmentID" />
+    </Key>
+    <Property Name="AppointmentID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PatientID" Type="varchar" MaxLength="50" />
+    <Property Name="DoctorID" Type="varchar" MaxLength="50" />
+    <Property Name="StartTime" Type="date" />
+    <Property Name="EndTime" Type="date" />
+  </EntityType>
+  <EntityType Name="DoctorDetails">
+    <Key>
+      <PropertyRef Name="DoctorID" />
+    </Key>
+    <Property Name="DoctorID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DoctorName" Type="varchar" MaxLength="50" />
+    <Property Name="Specaility" Type="varchar" MaxLength="50" />
+    <Property Name="IsAvailable" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PatientDetail">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="PatientID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PatientName" Type="varchar" MaxLength="50" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Gender" Type="varchar" MaxLength="1" />
+    <Property Name="HealthConditions" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="AppointmentSchedulerModelStoreContainer">
+    <EntitySet Name="AppointmentDetails" EntityType="Self.AppointmentDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoctorDetails" EntityType="Self.DoctorDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatientDetail" EntityType="Self.PatientDetail" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
